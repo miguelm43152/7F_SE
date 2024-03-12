@@ -1,19 +1,15 @@
 
+CLAYMORE = "Claymore"
+SPEAR = "Spear"
+SWORD = "Sword"
+
 class Arma:
             
         def __init__(self, nombre, ataque, tipo):
   
             self.nombre = nombre
             self.ataque = ataque
-
-            if tipo == 2:
-                tpe = "claymore"
-            elif tipo == 1:
-                tpe = "spear"
-            elif tipo == 0:
-                tpe = "sword"
-            self.tipoNum = tipo;
-            self.tipo = tpe;
+            self.tipo = tipo;
 
 
         def imprime_datos(self):
@@ -23,17 +19,17 @@ class Arma:
             return self.ataque
         
         def get_tipo(self):
-            return self.tipoNum
+            return self.tipo
 
-arma1 = Arma( "Lynel sword", 24, 0)
+arma1 = Arma( "Lynel sword", 24, SWORD)
 
-arma2 = Arma( "Knights Halverd", 13, 1)
+arma2 = Arma( "Knights Halverd", 13, SPEAR)
 
-arma3 = Arma( "Soldiers Broadsword", 14, 0)
+arma3 = Arma( "Soldiers Broadsword", 14, SWORD)
 
-arma4 = Arma( "ThunderSpear", 22, 1)
+arma4 = Arma( "ThunderSpear", 22, SPEAR)
 
-arma5 = Arma( "Royal Claymore", 52, 2)
+arma5 = Arma( "Royal Claymore", 52, CLAYMORE)
 
 lista = []
 lista.append( arma1 )
@@ -80,5 +76,3 @@ bubbleSort_ataque(lista)
 print( "\nLista ordenada por daño:\n")
 for i in range(len(lista)): ## empieza desde el numero 1 hasta el 10 con incrementos de 1
     lista[i].imprime_datos()
-
-
